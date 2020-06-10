@@ -1,68 +1,25 @@
 #include "stack.h"
 
 
-
-
-node::node()
+Stack::Stack()
 {
-	data = 0;
-	previvious = nullptr;
+	
 }
 
-node::node(int a)
+void Stack::push(int a)
 {
-	data = a;
-	previvious = nullptr;
-}
-node::node(int a,node *wsk)
-{
-	data = a;
-	previvious = wsk;
+	stack.push_back(a);
 }
 
-stack::stack()
+int Stack::pop()
 {
-	curr = nullptr;
-}
-
-
-
-
-void stack::push(int const a) noexcept
-{
-	//node* jd=;
-	if (curr == nullptr)
+	
+	if (stack.size()>0)
 	{
-		node new_(a);
-		curr = &new_;
-	}
-	else
-	{
-		node new_(a, curr);
-		curr = &new_;
-	}
-
-
-		
-
-
-
-
-	//stack curr;
-	//curr.data = a;
-	//curr.previvious = this;
-	//return curr;
-
-}
-
-int stack::pop() 
-{
-	if (curr->previvious != nullptr)
-	{
-		int ret = curr->data;
-		curr = curr->previvious;
-		return ret;
-	}
-	else
-	return 0;
+		int b = stack[stack.size() - 1];
+		stack.pop_back();					
+		return b;							
+	}										
+	else 
+		throw 3;		
 }

@@ -1,25 +1,11 @@
 #pragma once
-
-struct node
+#include <vector>
+struct Stack
 {
 private:
-	int data;
-	node* previvious;
+	std::vector<int> stack;
 public:
-	node();
-	node(int a);
-	node(int a, node* wsk);
-	friend class stack;
-};
-
-class stack
-{
-private:
-	node *curr;
-public:
-	stack();
-	void push(int const a)noexcept;
+	Stack();
+	void push(int a);
 	int pop();
-
-	//friend struct node;
 };

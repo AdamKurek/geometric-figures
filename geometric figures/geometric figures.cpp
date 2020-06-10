@@ -17,12 +17,12 @@ std::iostream& operator<<(std::iostream& os, rectangle& jd)
 
     int main()
     {
-        rectangle a(3,4);
-        std::cout << a.area();
-        std::cout << a.circuit()<<a;
+     //   rectangle a(3,4);
+     //   std::cout << a.area();
+     //   std::cout << a.circuit()<<a;
 
         try{
-        Stack mystack;
+        Stack<int> mystack;
         mystack.push(3);
         mystack.push(5);
         mystack.push(5);

@@ -6,22 +6,22 @@
 
 
 
-std::iostream& operator<<(std::iostream& os, rectangle& jd)
-{
-    os << jd.base << jd.area();
-    return os;
-}
 
 
 
 
     int main()
     {
-     //   rectangle a(3,4);
-     //   std::cout << a.area();
-     //   std::cout << a.circuit()<<a;
-
-        try{
+           triangle e(34, 25);
+           //rectangle a(10,10);
+       // std::cout << a.area();
+       //std::cout << a.circuit()<<std::endl;
+       e.draw();
+       std::cout << std::endl;
+     //  e.draw();
+       
+        /*try
+        {
         Stack<int> mystack;
         mystack.push(3);
         mystack.push(5);
@@ -40,7 +40,7 @@ std::iostream& operator<<(std::iostream& os, rectangle& jd)
                 std::cout << "twój stack jest pusty";
             else
                 std::cout << "nieznany błąd";
-        }
+        }*/
         
 
     }

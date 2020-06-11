@@ -9,7 +9,8 @@ class GeometricFigure
 	virtual double circuit();
 	virtual double getBase();
 	virtual double getAtribute();
-//	friend GeometricFigure;
+	//friend std::iostream& operator<<(std::iostream& os,const GeometricFigure& jd);
+	virtual void draw();
 };
 
 	class triangle:
@@ -17,10 +18,10 @@ class GeometricFigure
 	{
 	public:
 		triangle(double base, double atribute);
-		double area();
-		double circuit();
-		friend std::iostream& operator<<(std::iostream& os, triangle& jd);
-	//friend GeometricFigure;
+		virtual double area();
+		virtual double circuit();
+		//friend std::iostream& operator<<(std::iostream& os, triangle& jd);
+		void draw();
 	};
 	class rectangle :
 		public GeometricFigure
@@ -29,11 +30,9 @@ class GeometricFigure
 		rectangle(double base, double atribute);
 		double area();
 		double circuit();
-		//operator<<(ostream& os, const rectangle& p);
-	//	void operator<<();
-	//friend GeometricFigure;
-	//	ostream& operator<<(std::ostream& os, /*const*/ rectangle& jd);
-		 friend std::iostream& operator<<(std::iostream& os, rectangle& jd);
+		// friend std::iostream& operator<<(std::iostream& os, rectangle& jd);
+		void draw();
+		friend std::iostream& operator<<(std::iostream& os,const rectangle& jd);
 	};
 	class circle:
 	public GeometricFigure
@@ -42,8 +41,8 @@ class GeometricFigure
 		circle(double base);
 		double area();
 		double circuit();
-		friend std::iostream& operator<<(std::iostream& os, circle& dt);
-	//friend GeometricFigure;
+		//friend std::iostream& operator<<(std::iostream& os, circle& jd);
+		//void draw();
 	};
 
 

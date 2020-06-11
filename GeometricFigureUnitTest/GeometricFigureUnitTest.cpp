@@ -32,8 +32,8 @@ namespace GeometricFigureUnitTest
 			circle a(10);
 			Assert::AreEqual(10, a.getBase(), 0.01);
 			Assert::AreEqual(5, a.getAtribute(), 0.01);
-			Assert::AreEqual(314, a.area(), 0.01);
-			Assert::AreEqual(40 * 3.14, a.circuit(), 0.01);
+			Assert::AreEqual(78.5, a.area(), 0.01);
+			Assert::AreEqual(5 * 6.28, a.circuit(), 0.01);
 		};
 	};
 }

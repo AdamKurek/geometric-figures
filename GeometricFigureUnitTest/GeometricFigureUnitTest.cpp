@@ -27,13 +27,13 @@ namespace GeometricFigureUnitTest
 			Assert::AreEqual(42, a.area(), 0.01);
 			Assert::AreEqual(26, a.circuit(), 0.01);
 		}
-		TEST_METHOD(TestMethodCircle)
+		TEST_METHOD(TestMethodEllipse)
 		{
-			circle a(10);
-			Assert::AreEqual(10, a.getBase(), 0.01);
-			Assert::AreEqual(5, a.getAtribute(), 0.01);
-			Assert::AreEqual(78.5, a.area(), 0.01);
-			Assert::AreEqual(5 * 6.28, a.circuit(), 0.01);
+			ellipse a(6, 11);
+			Assert::AreEqual(6, a.getBase(), 0.01);
+			Assert::AreEqual(11, a.getAtribute(), 0.01);
+			Assert::AreEqual(207.24, a.area(), 0.01);
+			Assert::AreEqual(54.59, a.circuit(), 0.1);
 		};
 	};
 }

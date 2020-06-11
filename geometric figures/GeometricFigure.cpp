@@ -140,7 +140,7 @@ void rectangle::draw()
 {
     std::cout << ",";
     for (int i = 0; i < (2 * base)-2; i++)
-        std::cout << "_";
+        std::cout << "__";
     std::cout << "," << std::endl;
 
     for (int i = 0; i < atribute - 2; i++)
@@ -153,7 +153,7 @@ void rectangle::draw()
 
     std::cout<<'\'';
     for (int i = 0; i < (2 * base)-2; i++)
-        std::cout << "-"; 
+        std::cout << "--mn"; 
     std::cout << '\'';
 
 
@@ -162,7 +162,7 @@ void rectangle::draw()
 
     for(int i=0;i<2*base;i++)
     std::cout << "_";
-    std::cout << std::endl;
+    std::cout << std::endl;mn
     for (int i = 0; i < atribute - 2; i++)
     {
         std::cout << "|";
@@ -196,20 +196,20 @@ ellipse::ellipse(double base,double atribute)
 }
 double ellipse::area()
 {
-    return atribute*atribute*3.14;
+    return base*atribute*3.14;
 }
 
 double ellipse::circuit()
 {
-    return 6.28*atribute;
+    return  (((base+atribute)*3/2)-sqrt(base*atribute))*3.14 ;
 }
 void ellipse::draw()
 {
     double lit = 0;
     for (;lit<atribute+1; lit++)
     {
-        int temp = ((lit*lit*base/atribute/2)*base/atribute)-(lit*base*base/atribute/2);
-          for (int i = 0; i <temp + (base*2)+1; i++)
+        int temp = ((lit*lit*base/atribute/2)*base/atribute)-(lit*base*base/atribute/2)-2;
+          for (int i = 0; i <temp + (base*2); i++)
             std::cout << " ";
           if (lit==0)
             std::cout << "__";
@@ -223,8 +223,8 @@ void ellipse::draw()
               std::cout << "--" ; 
           else  
               std::cout << "coœ sie popsu³o" << std::endl;
-              for (int i = 0; i < ((base-temp)-base)*2; i++)
-                  std::cout << " ";
+              for (int i = 0; i < (((base-temp)-base)*2)-4; i++)
+                  std::cout << "O";
               if (lit < 0.45 * atribute && lit>0 )
                   std::cout << "\\";
               else if (lit < 0.55 * atribute && lit>0)

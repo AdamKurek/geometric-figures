@@ -14,7 +14,7 @@
     {
         ellipse e(5,10);
        // std::cout << a.area();
-       e.draw();
+        e.draw();
            std::cout << std::endl;
      //  e.draw();
        

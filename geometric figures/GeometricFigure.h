@@ -34,15 +34,15 @@ class GeometricFigure
 		void draw();
 		friend std::iostream& operator<<(std::iostream& os,const rectangle& jd);
 	};
-	class circle:
+	class ellipse:
 	public GeometricFigure
 	{
 	public:
-		circle(double base);
+		ellipse(double base,double atribute);
 		double area();
 		double circuit();
 		//friend std::iostream& operator<<(std::iostream& os, circle& jd);
-		//void draw();
+	 void draw();
 	};
 
 

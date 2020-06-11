@@ -189,21 +189,110 @@ void rectangle::operator<<()
 
 
 
-circle::circle(double base)
+ellipse::ellipse(double base,double atribute)
 {
     this->base = base;
-    atribute = base / 2;
+    this->atribute = atribute;
 }
-double circle::area()
+double ellipse::area()
 {
     return atribute*atribute*3.14;
 }
 
-double circle::circuit()
+double ellipse::circuit()
 {
     return 6.28*atribute;
 }
+void ellipse::draw()
+{
+    double lit = 0;
+    for (;lit<atribute+1; lit++)
+    {
+        int temp = ((lit*lit*base/atribute/2)*base/atribute)-(lit*base*base/atribute/2);
+          for (int i = 0; i <temp + (base*2)+1; i++)
+            std::cout << " ";
+          if (lit==0)
+            std::cout << "__";
+          else if (lit <0.45*atribute)
+              std::cout << "/" ;
+          else if (lit < 0.55 * atribute)
+              std::cout << "|" ;
+          else if (lit < 1 * atribute)
+              std::cout << "\\";
+          else if (lit == 1 * atribute)
+              std::cout << "--" ; 
+          else  
+              std::cout << "coœ sie popsu³o" << std::endl;
+              for (int i = 0; i < ((base-temp)-base)*2; i++)
+                  std::cout << " ";
+              if (lit < 0.45 * atribute && lit>0 )
+                  std::cout << "\\";
+              else if (lit < 0.55 * atribute && lit>0)
+                  std::cout << "|";
+              else if (lit < 1 * atribute && lit>0)
+                  std::cout << "/";
+              std::cout << std::endl;
+          
 
+          }
+            //  std::cout << " ";
+         // std::cout << "JD" << std::endl;
+    }
+    /*quick save
+    double lit = 0;
+    for (; lit < atribute + 1; lit++)
+    {
+        for (int i = 0; i < (base + (base * 2 / atribute)) - (((lit * base / atribute * 2) * base / 2) / 2) + (lit * ((lit * base / atribute * 2) / (2 * (atribute / base))) / 2) + 1; i++)
+            // for (int i = 0; i < ((base*base)*(lit*lit))/(2*atribute*atribute)-((base*base*lit)/2*atribute)+ ((2*base)/atribute)+base + 1; i++)
+            std::cout << " ";
+        if (lit == 0)
+            std::cout << "_" << std::endl;
+        else if (lit < 0.40 * atribute)
+            std::cout << "/" << std::endl;
+        else if (lit < 0.60 * atribute)
+            std::cout << "|" << std::endl;
+        else if (lit < 1 * atribute)
+            std::cout << "\\" << std::endl;
+        else if (lit == 1 * atribute)
+            std::cout << "-" << std::endl;
+        else
+            std::cout << "coœ sie popsu³o" << std::endl;
+    }*/
+
+
+    /*  double lit = 0;
+    for (;lit<atribute+1; lit++)
+    {
+        for (int i=0;i<((base)-(lit*base/4)+(lit*lit/2));i++)
+            std::cout << " ";
+            std::cout << "/"<<std::endl;
+        
+    }*/
+
+    /*
+    int lit =0;
+    for (;lit<atribute; lit++)
+    {
+        for (int i=0;i<(lit*base/2)-(lit*lit);i++)
+            std::cout << " ";
+            std::cout << "/"<<std::endl;
+        
+    }*/
+
+
+    /*  int lit = atribute;
+    for (;lit>0; lit--)
+    {
+        for (int i=0;i<(lit*base/2)-(lit*lit);i++)
+            std::cout << " ";
+            std::cout << "/"<<std::endl;
+        
+    }*/
+
+
+
+
+/*
 std::iostream& operator<<(std::iostream& os,const GeometricFigure& jd)
 {
     os << "JD";
@@ -220,6 +309,6 @@ std::iostream& operator<<(std::iostream& os, circle& jd)
 {
     os << "JD disa";
     return os;
-}
+}*/
 
 

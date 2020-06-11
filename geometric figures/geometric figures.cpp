@@ -12,12 +12,10 @@
 
     int main()
     {
-           triangle e(34, 25);
-           //rectangle a(10,10);
+        ellipse e(5,10);
        // std::cout << a.area();
-       //std::cout << a.circuit()<<std::endl;
        e.draw();
-       std::cout << std::endl;
+           std::cout << std::endl;
      //  e.draw();
        
         /*try

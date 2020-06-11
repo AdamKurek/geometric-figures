@@ -25,7 +25,12 @@ double GeometricFigure::getAtribute()
 
 void GeometricFigure::draw()
 {
+
 }
+
+//void GeometricFigure::draw()
+//{
+//}
 
 
 
@@ -46,7 +51,7 @@ double triangle::circuit()
     return base+(sqrt( pow(base/2,2)*pow(atribute,2)));
 }
 
-void triangle::draw()
+  void triangle::draw()
 {
 
 
@@ -136,7 +141,7 @@ double rectangle::circuit()
     return 2*(base+atribute);
 }
 
-void rectangle::draw()
+ void rectangle::draw()
 {
     std::cout << ",";
     for (int i = 0; i < (2 * base)-2; i++)
@@ -208,8 +213,9 @@ void ellipse::draw()
     double lit = 0;
     for (;lit<atribute+1; lit++)
     {
-        int temp = ((lit*lit*base/atribute/2)*base/atribute)-(lit*base*base/atribute/2)-2;
-          for (int i = 0; i <temp + (base*2); i++)
+       int temp = (((lit*lit*base/atribute)*base/atribute)/4)-((lit*base*base/atribute)/4);
+      //  int temp = ((lit * lit * base / atribute / 2) * base / atribute) - (lit * base * base / atribute / 2) - 2;
+          for (int i = 0; i < temp + (base * 2); i++)
             std::cout << " ";
           if (lit==0)
             std::cout << "__";
@@ -223,7 +229,7 @@ void ellipse::draw()
               std::cout << "--" ; 
           else  
               std::cout << "coœ sie popsu³o" << std::endl;
-              for (int i = 0; i < (((base-temp)-base)*2)-4; i++)
+              for (int i = 0; i < (((base-temp)-base)*2); i++)
                   std::cout << "O";
               if (lit < 0.45 * atribute && lit>0 )
                   std::cout << "\\";

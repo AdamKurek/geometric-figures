@@ -12,25 +12,16 @@
 
     int main()
     {
-        ellipse e(5,10);
-       // std::cout << a.area();
-        e.draw();
-           std::cout << std::endl;
-     //  e.draw();
+     
        
-        /*try
+        try
         {
-        Stack<int> mystack;
-        mystack.push(3);
-        mystack.push(5);
-        mystack.push(5);
-        //   try {
-        std::cout << mystack.pop() << std::endl;
-        std::cout << mystack.pop() << std::endl;
-        std::cout << mystack.pop() << std::endl;
-        std::cout << mystack.pop() << std::endl;
-        std::cout << mystack.pop() << std::endl;
-
+        Stack<triangle> mystack;
+        mystack.push(triangle(14,8));
+        mystack.push(rectangle(20,7));
+        mystack.push(ellipse(14,19));
+        GeometricFigure a= mystack.pop();
+        a.draw();
         }
         catch (int g)
         {
@@ -38,7 +29,7 @@
                 std::cout << "twój stack jest pusty";
             else
                 std::cout << "nieznany błąd";
-        }*/
+        }
         
 
     }

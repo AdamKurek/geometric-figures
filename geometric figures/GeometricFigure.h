@@ -3,9 +3,9 @@
 class GeometricFigure
 {
 	public:
-	double base;
-	double atribute;
-	virtual double area();
+	 double base;
+	 double atribute;
+	 double area();
 	virtual double circuit();
 	virtual double getBase();
 	virtual double getAtribute();
@@ -21,7 +21,7 @@ class GeometricFigure
 		virtual double area();
 		virtual double circuit();
 		//friend std::iostream& operator<<(std::iostream& os, triangle& jd);
-		void draw();
+		virtual void draw();
 	};
 	class rectangle :
 		public GeometricFigure
@@ -31,7 +31,7 @@ class GeometricFigure
 		double area();
 		double circuit();
 		// friend std::iostream& operator<<(std::iostream& os, rectangle& jd);
-		void draw();
+		virtual void draw();
 		friend std::iostream& operator<<(std::iostream& os,const rectangle& jd);
 	};
 	class ellipse:
@@ -42,7 +42,7 @@ class GeometricFigure
 		double area();
 		double circuit();
 		//friend std::iostream& operator<<(std::iostream& os, circle& jd);
-	 void draw();
+		virtual  void draw();
 	};
 
 

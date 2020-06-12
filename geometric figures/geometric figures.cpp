@@ -16,13 +16,13 @@
        
         try
         {
-        Stack<triangle> mystack;
-        mystack.push(triangle(14,8));
-        mystack.push(rectangle(20,7));
-        mystack.push(ellipse(14,19));
-        GeometricFigure a= mystack.pop();
+        Stack<ellipse> mystack;
+        mystack.push(ellipse(11,15));
+      // mystack.push(rectangle(20,7));
+       // mystack.push(ellipse(14,19));
+        ellipse   a= mystack.pop();
         a.draw();
-        }
+         }
         catch (int g)
         {
             if (g == 3)

@@ -227,10 +227,8 @@ void ellipse::draw()
               std::cout << "\\";
           else if (lit == 1 * atribute)
               std::cout << "--" ; 
-          else  
-              std::cout << "coœ sie popsu³o" << std::endl;
               for (int i = 0; i < (((base-temp)-base)*2); i++)
-                  std::cout << "O";
+                  std::cout << " ";
               if (lit < 0.45 * atribute && lit>0 )
                   std::cout << "\\";
               else if (lit < 0.55 * atribute && lit>0)

@@ -1,32 +1,26 @@
 #include "GeometricFigure.h"
 #include <cmath>
 #include<iostream>
-double GeometricFigure::area()
+
+
+
+
+GeometricFigure::GeometricFigure()
 {
-    //po co to jest?
-    return 0.0;
+    base = 10;
+    atribute = 10;
 }
 
-double GeometricFigure::circuit()
-{
-    //po co to jest?????
-    return 0.0;
-}
-
-double GeometricFigure::getBase()
+double GeometricFigure::getBase()const
 {
     return base;
 }
-
-double GeometricFigure::getAtribute()
+ double GeometricFigure::getAtribute()const
 {
     return atribute;
 }
 
-void GeometricFigure::draw()
-{
 
-}
 
 //void GeometricFigure::draw()
 //{
@@ -41,17 +35,17 @@ triangle::triangle(double base, double atribute)
 }
 
 
-double triangle::area()
+ double triangle::area()const
 {
     return base*atribute/2;
 }
 
-double triangle::circuit()
+ double triangle::circuit()const //override
 {
     return base+(sqrt( pow(base/2,2)*pow(atribute,2)));
 }
 
-  void triangle::draw()
+ void triangle::draw() const
 {
 
 
@@ -124,28 +118,28 @@ double triangle::circuit()
 
 
 
-rectangle::rectangle(double base, double atribute)
+  rectangle::rectangle(double base, double atribute)
 {
     this->base = base;
     this->atribute = atribute;
 }
 
 
-double rectangle::area()
+ double rectangle::area()const
 {
     return base*atribute;
 }
 
-double rectangle::circuit()
+ double rectangle::circuit()const
 {
     return 2*(base+atribute);
 }
 
- void rectangle::draw()
+ void rectangle::draw() const
 {
     std::cout << ",";
     for (int i = 0; i < (2 * base)-2; i++)
-        std::cout << "__";
+        std::cout << "_";
     std::cout << "," << std::endl;
 
     for (int i = 0; i < atribute - 2; i++)
@@ -158,7 +152,7 @@ double rectangle::circuit()
 
     std::cout<<'\'';
     for (int i = 0; i < (2 * base)-2; i++)
-        std::cout << "--mn"; 
+        std::cout << "-"; 
     std::cout << '\'';
 
 
@@ -194,21 +188,21 @@ void rectangle::operator<<()
 
 
 
-ellipse::ellipse(double base,double atribute)
+ ellipse::ellipse(double base,double atribute)
 {
     this->base = base;
     this->atribute = atribute;
 }
-double ellipse::area()
+  double ellipse::area()const
 {
     return base*atribute*3.14;
 }
 
-double ellipse::circuit()
+ double ellipse::circuit()const
 {
     return  (((base+atribute)*3/2)-sqrt(base*atribute))*3.14 ;
 }
-void ellipse::draw()
+void ellipse::draw() const
 {
     double lit = 0;
     for (;lit<atribute+1; lit++)
@@ -299,7 +293,7 @@ void ellipse::draw()
 /*
 std::iostream& operator<<(std::iostream& os,const GeometricFigure& jd)
 {
-    os << "JD";
+    os << jd.circle;
     return os;
 }
 
@@ -315,4 +309,9 @@ std::iostream& operator<<(std::iostream& os, circle& jd)
     return os;
 }*/
 
-
+    std::ostream& operator<<(std::ostream& os, GeometricFigure const & jd)
+    {
+       // jd.draw();
+        std::cout << "jd";
+        return os;
+    }

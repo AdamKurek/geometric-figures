@@ -20,6 +20,36 @@ namespace StackUnitTest
 			Assert::AreEqual(9, mystack.pop());
 			Assert::AreEqual(6, mystack.pop());
 		}
+
+		TEST_METHOD(TestIntdeletelast)
+		{
+			Stack<int> mystack;
+			mystack.push(6);
+			mystack.push(9);
+			mystack.deletelast();
+			Assert::AreEqual(6, mystack.pop());
+		}
+		TEST_METHOD(TestIntdeletelastleftsempty)
+		{
+			Stack<int> mystack;
+			mystack.push(6);
+			mystack.deletelast();
+			Assert::AreEqual(true, mystack.empty());
+		}
+		TEST_METHOD(TestIntdeletelastempty)
+		{
+			Stack<int> mystack;
+			mystack.deletelast();
+			Assert::AreEqual(true, mystack.empty());
+		}
+
+		TEST_METHOD(Testlast)
+		{
+			Stack<int> mystack;
+			mystack.push(6);
+			Assert::AreEqual(6, mystack.last());
+			Assert::AreEqual(6, mystack.pop());
+		}
 		TEST_METHOD(Testchar)
 		{
 			Stack<char> mystack;

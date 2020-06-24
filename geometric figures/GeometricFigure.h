@@ -3,14 +3,14 @@
 class GeometricFigure
 {
 	public:
-	 double base;
-	 double atribute;
-	 double area();
-	virtual double circuit();
-	virtual double getBase();
-	virtual double getAtribute();
-	//friend std::iostream& operator<<(std::iostream& os,const GeometricFigure& jd);
-	virtual void draw();
+	double base;
+	double atribute;
+	GeometricFigure();
+	double getBase()const;
+	double getAtribute()const;
+	virtual double area()const =0;
+	virtual double circuit()const =0;
+	virtual void draw()const =0;
 };
 
 	class triangle:
@@ -18,31 +18,31 @@ class GeometricFigure
 	{
 	public:
 		triangle(double base, double atribute);
-		virtual double area();
-		virtual double circuit();
-		//friend std::iostream& operator<<(std::iostream& os, triangle& jd);
-		virtual void draw();
+		 double area()const override;
+		 double circuit()const override;//override;
+		 void draw()const override;
 	};
 	class rectangle :
 		public GeometricFigure
 	{
 	public:
 		rectangle(double base, double atribute);
-		double area();
-		double circuit();
-		// friend std::iostream& operator<<(std::iostream& os, rectangle& jd);
-		virtual void draw();
-		friend std::iostream& operator<<(std::iostream& os,const rectangle& jd);
+		 double area()const override;
+		 double circuit()const override;
+
+		  void draw()const override;
+	
 	};
 	class ellipse:
 	public GeometricFigure
 	{
 	public:
 		ellipse(double base,double atribute);
-		double area();
-		double circuit();
-		//friend std::iostream& operator<<(std::iostream& os, circle& jd);
-		virtual  void draw();
+		 double area()const override;
+		 double circuit()const override;
+
+		 void draw()const override;
 	};
 
 
+	 std::ostream& operator<<(std::ostream& os,  GeometricFigure const &  jd);
